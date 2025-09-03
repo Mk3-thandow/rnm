@@ -123,7 +123,7 @@ section {
 
 .home-content {
     max-width: 60rem;
-    /* z-index: 99; */
+    z-index: 99;
 }
 
 .home-content h1 {
@@ -757,11 +757,7 @@ span {
 }
 
 @media (max-width: 991px) {
-     html {
-        font-size: 46%;
-    }
-
-    .header {
+     .header {
         padding: 2rem 4%;
         background: rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(10px);
@@ -789,35 +785,6 @@ span {
     #menu-icon{
         display: block;
         cursor: pointer;
-    }
-
-    .row {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-col-1, .about-col-2 {
-    width: 100%;
-    margin: 1rem 0;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-    
-    .about-col-1 img {
-        max-width: 90%;   /* stop image overflow */
-        height: auto;
-    }
-
-    .home-content h1 {
-        font-size: 3rem;  /* smaller title for mobile */
-    }
-
-    p {
-        font-size: 1.4rem; /* keep text readable */
     }
 
     .navbar {
@@ -930,7 +897,7 @@ span {
 
         .home-content{
             display: flex;
-            align-items: baseline;
+            align-items: center;
             flex-direction: column;
             text-align: center;
         }
@@ -938,9 +905,6 @@ span {
         .home-content h1{
             font-size: 5rem;
         }
-
-       }
-
 }
 .footer {
     display: flex;
@@ -951,9 +915,7 @@ span {
     background: rgba(71, 16, 48, 0.571);
 }
 
-
-
-
 }
+
 
 
