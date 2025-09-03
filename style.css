@@ -791,6 +791,20 @@ span {
         cursor: pointer;
     }
 
+    .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-col-1, .about-col-2 {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
    
     .navbar {
         position: absolute;
@@ -927,3 +941,4 @@ span {
 
 
 }
+
