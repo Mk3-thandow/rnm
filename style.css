@@ -756,7 +756,11 @@ span {
 }
 
 @media (max-width: 991px) {
-     .header {
+     html {
+        font-size: 46%;
+    }
+    
+    .header {
         padding: 2rem 4%;
         background: rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(10px);
@@ -896,7 +900,7 @@ span {
 
         .home-content{
             display: flex;
-            align-items: center;
+            align-items: basline;
             flex-direction: column;
             text-align: center;
         }
@@ -915,6 +919,7 @@ span {
 }
 
 }
+
 
 
 
