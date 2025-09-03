@@ -877,7 +877,7 @@ span {
     .navbar a.active::after{
   width: 100%;
     } */
-
+}
     @media (max-width: 520px) {
 
         .html{
@@ -948,7 +948,6 @@ span {
     background: rgba(71, 16, 48, 0.571);
 }
 
-}
 
 
 
