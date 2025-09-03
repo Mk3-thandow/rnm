@@ -793,19 +793,33 @@ span {
 
     .row {
     flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
   .about-col-1, .about-col-2 {
     width: 100%;
+    margin: 1rem 0;
   }
 
   img {
     max-width: 100%;
     height: auto;
   }
+    
+    .about-col-1 img {
+        max-width: 90%;   /* stop image overflow */
+        height: auto;
+    }
 
-   
+    .home-content h1 {
+        font-size: 3rem;  /* smaller title for mobile */
+    }
+
+    p {
+        font-size: 1.4rem; /* keep text readable */
+    }
+
     .navbar {
         position: absolute;
         top: 100%;
@@ -941,4 +955,5 @@ span {
 
 
 }
+
 
