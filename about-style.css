@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display+swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #080808;
+    --text-color: #f0f0f0;
+    --main-color: rgb(163, 13, 100);
+    --white-color: #f0f0f0;
+    --second-color: rgba(87, 6, 52, 0.527);
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--white-color);
+}
+
+.header{
+   position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.exit{
+align-items: center;
+  display: flex;
+}
+
+.exit a {
+   position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    /* border: .2rem solid var(--main-color); */
+    border-radius: 50%;
+    font-size: 30px;
+    color: var(--main-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5; 
+}
+
+.exit a:hover{
+      color: var(--main-color);
+    transform: translateY(-5px);
+}
+
+.exit a::before{
+   content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: var(--main-color); */
+    z-index: 1;
+    transition: .5s;
+}
+
+.exit a:hover::before{
+   width: 100%;
+}
+
+#about .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+}
+
+.about-col-1 {
+  flex: 1;
+  text-align: center;
+}
+
+.about-picture {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+.about-picture:hover {
+  transform: scale(1.05);
+}
+
+.about-col-2 {
+  flex: 2;
+  padding: 0 1rem;
+}
+
+#about .sub-title {
+
+  font-size: 3rem;
+  margin-top: 2.0rem;
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+
+/* Tabs */
+.tab-titles {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.tab-links {
+  font-size: 1.7rem;
+  font-weight: 600;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.tab-links:hover {
+  color: var(--main-color);
+}
+
+.tab-links::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background: rgb(163, 13, 100);
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: width 0.4s ease;
+}
+
+.tab-links.active-link::after {
+  width: 100%;
+}
+
+.tab-contents {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-contents.active-tab {
+  display: block;
+  margin-top: 1rem;
+}
+
+.tab-contents ul {
+  padding-left: 0;
+}
+
+.tab-contents ul li {
+  list-style: none;
+  margin: 0.8rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.tab-contents ul li span {
+  color: rgb(163, 13, 100);
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-contents{
+  display: none;
+}
+  .tab-contents.active-tab{
+display: block;
+  }
+
+/* Extended Services */
+#extended-services {
+  background: var(--second-color);
+  color: var(--text-color);
+  padding: 6rem 3rem;
+  /* text-align: center; */
+}
+
+#extended-services .sub-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--main-color);
+}
+
+.extended-services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.extended-service-card {
+  background: var(--second-color);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#extended-services h2 {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  color: var(--main-color);
+}
+
+/* .extended-service-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--white-color);
+} */
+
+.extended-service-card p {
+  font-size: 1.4rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
+}
+
+.extended-service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
