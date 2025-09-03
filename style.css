@@ -108,8 +108,10 @@ section {
     background: url('assets/Picture11.jpg') no-repeat;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    min-height:100vh;
+    background-attachment: scroll;
+    min-height: 100vh;
+    justify-content: center;
+    text-align: center;
 }
 
 .home-imghover.home-img {
@@ -921,6 +923,7 @@ span {
 }
 
 }
+
 
 
 
