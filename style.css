@@ -805,7 +805,7 @@ span {
     justify-content: center;  /* center vertically (if space allows) */
     gap: 1.5rem;              /* space between buttons */
     margin-top: 2rem;         /* push them down a little */
-    margin-left: 8rem
+    margin-left: 18rem
   
  }
     
@@ -963,6 +963,7 @@ span {
     padding: 2rem 9%;
     background: rgba(71, 16, 48, 0.571);
 }
+
 
 
 
