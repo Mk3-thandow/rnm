@@ -3,88 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog</title>
+    <title>My Blog | Personal Portfolio</title>
     <link rel="stylesheet" href="style.css">
-     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
-
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-  <!-- exit Link -->
-<header class>
-  <!-- <div class="exit">
-        <a href="index.html"><i class='bx bx-chevron-left-square'></i></a>
-       </div> -->
-</header>
+    <!-- Header with Navigation -->
+    <header class="blog-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="back-btn">
+                    <i class='bx bx-chevron-left'></i> Back to Portfolio
+                </a>
+                <div class="header-title">
+                    <h1>My <span>Blog</span></h1>
+                    <p>Thoughts, experiences, and insights from my journey</p>
+                </div>
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class='bx bx-moon'></i>
+                    </button>
+                    <div class="search-box">
+                        <i class='bx bx-search'></i>
+                        <input type="text" id="searchInput" placeholder="Search posts...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
        
-<!-- blog content -->
-<section id="blog" class="blog">
-  <h2 class="heading">Let's <span>Talk 💬</span></h2>
+    <!-- Main Blog Content -->
+    <main class="blog-main">
+        <div class="container">
+            <!-- Featured Post Section -->
+            <section class="featured-section">
+                <h2 class="section-title">Featured <span>Post</span></h2>
+                <div class="featured-post">
+                    <div class="featured-image">
+                        <div class="post-category">Hackathon</div>
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80" alt="Hackathon Experience">
+                    </div>
+                    <div class="featured-content">
+                        <div class="post-meta">
+                            <span class="post-date"><i class='bx bx-calendar'></i> August 20, 2025</span>
+                            <span class="post-read-time"><i class='bx bx-time'></i> 4 min read</span>
+                            <span class="post-category-tag">Datathon</span>
+                        </div>
+                        <h2 class="post-title">My Hackathon Journey: Lessons from IBM and CSIR Datathons</h2>
+                        <p class="post-excerpt">
+                            Reflecting on my participation in the IBM and CSIR Datathons, where my team secured 4th place in both events. These experiences significantly sharpened my data visualization, teamwork, and problem-solving skills in high-pressure environments.
+                        </p>
+                        <a href="#hackathon-detail" class="read-more-btn">Read Full Story <i class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Blog Categories Filter -->
+            <section class="categories-section">
+                <h3 class="section-subtitle">Browse by <span>Category</span></h3>
+                <div class="categories-filter">
+                    <button class="category-btn active" data-category="all">All Posts</button>
+                    <button class="category-btn" data-category="experience">Experiences</button>
+                    <button class="category-btn" data-category="projects">Projects</button>
+                    <button class="category-btn" data-category="learning">Learnings</button>
+                    <button class="category-btn" data-category="career">Career</button>
+                </div>
+            </section>
+            
+            <!-- Blog Posts Grid -->
+            <section class="blog-posts-section">
+                <h2 class="section-title">Recent <span>Posts</span></h2>
+                <div class="blog-posts-grid" id="blogPostsGrid">
+                    <!-- Post 1 -->
+                    <article class="blog-post" data-category="experience" data-id="1">
+                        <div class="post-image">
+                            <div class="post-category">Career</div>
+                            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Graduate Assessment">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class='bx bx-calendar'></i> July 15, 2025</span>
+                                <span class="post-read-time"><i class='bx bx-time'></i> 5 min read</span>
+                            </div>
+                            <h3 class="post-title">WSU Graduate Employability Assessment Project</h3>
+                            <p class="post-text">
+                                I was part of the Institutional Research team for the WSU Graduate Employability Assessment. Our focus was on analyzing graduate outcomes, including employment, entrepreneurship, and leadership roles across different disciplines.
+                            </p>
+                            <div class="post-footer">
+                                <a href="#" class="read-more">Read More <i class='bx bx-right-arrow-alt'></i></a>
+                                <div class="post-tags">
+                                    <span class="tag">Research</span>
+                                    <span class="tag">Data Analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Post 2 -->
+                    <article class="blog-post" data-category="learning" data-id="2">
+                        <div class="post-image">
+                            <div class="post-category">Learning</div>
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Data Visualization">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class='bx bx-calendar'></i> June 10, 2025</span>
+                                <span class="post-read-time"><i class='bx bx-time'></i> 6 min read</span>
+                            </div>
+                            <h3 class="post-title">Mastering Data Visualization Techniques</h3>
+                            <p class="post-text">
+                                Exploring the most effective data visualization methods I've learned through various projects and how they can transform complex data into compelling, actionable insights for stakeholders.
+                            </p>
+                            <div class="post-footer">
+                                <a href="#" class="read-more">Read More <i class='bx bx-right-arrow-alt'></i></a>
+                                <div class="post-tags">
+                                    <span class="tag">DataViz</span>
+                                    <span class="tag">Skills</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Post 3 -->
+                    <article class="blog-post" data-category="projects" data-id="3">
+                        <div class="post-image">
+                            <div class="post-category">Project</div>
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Team Collaboration">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class='bx bx-calendar'></i> May 22, 2025</span>
+                                <span class="post-read-time"><i class='bx bx-time'></i> 3 min read</span>
+                            </div>
+                            <h3 class="post-title">Effective Team Collaboration in Remote Settings</h3>
+                            <p class="post-text">
+                                Lessons learned from collaborating with distributed teams during hackathons and projects. How we maintained productivity and communication across different time zones.
+                            </p>
+                            <div class="post-footer">
+                                <a href="#" class="read-more">Read More <i class='bx bx-right-arrow-alt'></i></a>
+                                <div class="post-tags">
+                                    <span class="tag">Teamwork</span>
+                                    <span class="tag">Remote Work</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Post 4 -->
+                    <article class="blog-post" data-category="career" data-id="4">
+                        <div class="post-image">
+                            <div class="post-category">Career</div>
+                            <img src="https://images.unsplash.com/photo-1551836026-d5c2c5af78e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Problem Solving">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class='bx bx-calendar'></i> April 5, 2025</span>
+                                <span class="post-read-time"><i class='bx bx-time'></i> 7 min read</span>
+                            </div>
+                            <h3 class="post-title">Problem-Solving Frameworks That Work</h3>
+                            <p class="post-text">
+                                A breakdown of problem-solving methodologies I've applied in hackathons and real-world projects. From defining problems to implementing and testing solutions.
+                            </p>
+                            <div class="post-footer">
+                                <a href="#" class="read-more">Read More <i class='bx bx-right-arrow-alt'></i></a>
+                                <div class="post-tags">
+                                    <span class="tag">Methodology</span>
+                                    <span class="tag">Problem Solving</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Post 5 -->
+                    <article class="blog-post" data-category="learning" data-id="5">
+                        <div class="post-image">
+                            <div class="post-category">Learning</div>
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Tech Stack">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class='bx bx-calendar'></i> March 18, 2025</span>
+                                <span class="post-read-time"><i class='bx bx-time'></i> 5 min read</span>
+                            </div>
+                            <h3 class="post-title">My Evolving Tech Stack: Tools That Boost Productivity</h3>
+                            <p class="post-text">
+                                An overview of the tools, frameworks, and technologies that have become essential in my workflow, and how they've evolved based on project requirements and personal preferences.
+                            </p>
+                            <div class="post-footer">
+                                <a href="#" class="read-more">Read More <i class='bx bx-right-arrow-alt'></i></a>
+                                <div class="post-tags">
+                                    <span class="tag">Tools</span>
+                                    <span class="tag">Productivity</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Post 6 -->
+                    <article class="blog-post" data-category="experience" data-id="6">
+                        <div class="post-image">
+                            <div class="post-category">Experience</div>
+                            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80" alt="Career Growth">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class='bx bx-calendar'></i> February 28, 2025</span>
+                                <span class="post-read-time"><i class='bx bx-time'></i> 4 min read</span>
+                            </div>
+                            <h3 class="post-title">From Student to Professional: Navigating the Transition</h3>
+                            <p class="post-text">
+                                Reflections on the transition from academic life to professional work, highlighting key lessons, challenges, and how my university experiences prepared me for real-world projects.
+                            </p>
+                            <div class="post-footer">
+                                <a href="#" class="read-more">Read More <i class='bx bx-right-arrow-alt'></i></a>
+                                <div class="post-tags">
+                                    <span class="tag">Career Growth</span>
+                                    <span class="tag">Transition</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Load More Button -->
+                <div class="load-more-container">
+                    <button class="load-more-btn" id="loadMoreBtn">Load More Posts</button>
+                </div>
+            </section>
+            
+            <!-- Blog Sidebar (on larger screens) -->
+            <aside class="blog-sidebar">
+                <div class="sidebar-widget about-widget">
+                    <h3>About This Blog</h3>
+                    <p>Welcome to my personal blog where I share experiences, insights, and lessons from my journey in tech, data science, and professional development.</p>
+                    <div class="social-links">
+                        <a href="#"><i class='bx bxl-linkedin'></i></a>
+                        <a href="#"><i class='bx bxl-github'></i></a>
+                        <a href="#"><i class='bx bxl-twitter'></i></a>
+                        <a href="#"><i class='bx bxl-medium'></i></a>
+                    </div>
+                </div>
+                
+                <div class="sidebar-widget popular-posts">
+                    <h3>Popular Posts</h3>
+                    <ul>
+                        <li>
+                            <a href="#">My Hackathon Journey</a>
+                            <span class="popular-date">Aug 20, 2025</span>
+                        </li>
+                        <li>
+                            <a href="#">WSU Graduate Assessment</a>
+                            <span class="popular-date">Jul 15, 2025</span>
+                        </li>
+                        <li>
+                            <a href="#">Data Visualization Techniques</a>
+                            <span class="popular-date">Jun 10, 2025</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-widget newsletter-widget">
+                    <h3>Subscribe to Updates</h3>
+                    <p>Get notified when I publish new posts.</p>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="blog-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>My<span>Blog</span></h3>
+                    <p>Sharing knowledge and experiences</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Portfolio</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 My Portfolio Blog. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-  <div class="blog-container">
-    <div class="blog-post">
-      <h3 class="post-title">My Hackathon Journey</h3>
-      <span class="date">August 20, 2025</span>
-      <p class="post-text">
-        I participated in the IBM and CSIR Datathons, where my team secured
-        4th place in both events. These experiences sharpened my data
-        visualization, teamwork, and problem-solving skills.
-      </p>
-    </div>
-
-    <div class="blog-post">
-      <h3 class="post-title">WSU Graduate Employability Assessment</h3>
-      <span class="date">July 15, 2025</span>
-      <p class="post-text">
-        I was part of the Institutional Research team for the WSU Graduate
-        Employability Assessment. Our focus was on analyzing graduate outcomes,
-        including employment, entrepreneurship, and leadership roles.
-      </p>
-    </div>
-
-    <div class="blog-post">
-      <h3 class="post-title">My Hackathon Journey</h3>
-      <span class="date">August 20, 2025</span>
-      <p class="post-text">
-        I participated in the IBM and CSIR Datathons, where my team secured
-        4th place in both events. These experiences sharpened my data
-        visualization, teamwork, and problem-solving skills.
-      </p>
-    </div>
-
-    <div class="blog-post">
-      <h3 class="post-title">WSU Graduate Employability Assessment</h3>
-      <span class="date">July 15, 2025</span>
-      <p class="post-text">
-        I was part of the Institutional Research team for the WSU Graduate
-        Employability Assessment. Our focus was on analyzing graduate outcomes,
-        including employment, entrepreneurship, and leadership roles.
-      </p>
-    </div>
-
-    <div class="blog-post">
-      <h3 class="post-title">My Hackathon Journey</h3>
-      <span class="date">August 20, 2025</span>
-      <p class="post-text">
-        I participated in the IBM and CSIR Datathons, where my team secured
-        4th place in both events. These experiences sharpened my data
-        visualization, teamwork, and problem-solving skills.
-      </p>
-    </div>
-
-    <div class="blog-post">
-      <h3 class="post-title">WSU Graduate Employability Assessment</h3>
-      <span class="date">July 15, 2025</span>
-      <p class="post-text">
-        I was part of the Institutional Research team for the WSU Graduate
-        Employability Assessment. Our focus was on analyzing graduate outcomes,
-        including employment, entrepreneurship, and leadership roles.
-      </p>
-    </div>
-    <div class="btn-box-exit">
-                    <a href="index.html" class="btn">Back</a>
-                 </div>
-  </div>
-</section>
+    <!-- JavaScript -->
+    <script src="blog-script.js"></script>
 </body>
 </html>
