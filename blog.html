@@ -7,178 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://cdn.oxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Additional inline styles for new CV & Reports showcase */
-        .cv-reports-showcase {
-            background: linear-gradient(135deg, #f8faff 0%, #f0f4fe 100%);
-            border-radius: 24px;
-            padding: 2rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
-            border: 1px solid rgba(99, 102, 241, 0.15);
-        }
-        .showcase-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .showcase-header h2 {
-            font-size: 1.8rem;
-            background: linear-gradient(135deg, #1e293b, #3b82f6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin: 0;
-        }
-        .cv-card {
-            background: white;
-            border-radius: 20px;
-            padding: 1.5rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-            border: 1px solid #e2e8f0;
-        }
-        .cv-card:hover {
-            transform: translateY(-4px);
-        }
-        .cv-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #eef2ff;
-            padding-bottom: 0.75rem;
-        }
-        .cv-header i {
-            font-size: 2rem;
-            color: #3b82f6;
-        }
-        .cert-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1rem 0;
-        }
-        .cert-badge {
-            background: #eef2ff;
-            padding: 0.3rem 0.8rem;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #1e40af;
-        }
-        .report-item {
-            background: white;
-            border-radius: 16px;
-            padding: 1rem;
-            transition: all 0.2s;
-            border-left: 4px solid #3b82f6;
-            margin-bottom: 1rem;
-        }
-        .report-item h4 {
-            margin: 0 0 0.25rem 0;
-            font-size: 1rem;
-        }
-        .two-columns {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 2rem;
-        }
-        @media (max-width: 768px) {
-            .two-columns { grid-template-columns: 1fr; }
-            .cv-reports-showcase { padding: 1.25rem; }
-        }
-        .btn-cv {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: #1e293b;
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s;
-            margin-top: 1rem;
-        }
-        .btn-cv:hover {
-            background: #0f172a;
-            gap: 0.75rem;
-        }
-        .portfolio-link {
-            color: #3b82f6;
-            font-weight: 600;
-            text-decoration: none;
-            border-bottom: 1px dashed #3b82f6;
-        }
-    </style>
 </head>
 <body>
-    <!-- NEW SECTION: CV & REPORTS SHOWCASE (added on top, preserving original structure) -->
-    <div class="container" style="margin-top: 2rem;">
-        <div class="cv-reports-showcase">
-            <div class="showcase-header">
-                <h2><i class="fas fa-file-alt" style="margin-right: 10px; color:#3b82f6;"></i> My Professional Portfolio & Reports</h2>
-                <a href="#" class="btn-cv" target="_blank"><i class="fas fa-download"></i> Download Full CV (PDF)</a>
-            </div>
-            <div class="two-columns">
-                <!-- Left Column: CV + Certifications -->
-                <div class="cv-card">
-                    <div class="cv-header">
-                        <i class="fas fa-user-graduate"></i>
-                        <h3 style="margin:0;">Curriculum Vitae Highlights</h3>
-                    </div>
-                    <p><strong>Data Analyst | Researcher | AI Enthusiast</strong> — Experienced in institutional research, data visualization, and hackathon collaborations.</p>
-                    <div class="cert-list">
-                        <span class="cert-badge">📊 Statistics for Data Science & Business Analysis</span>
-                        <span class="cert-badge">🤖 Advanced Data Analysis & Analytics Reporting with AI</span>
-                        <span class="cert-badge">📘 IBM Developer Skills Network – Data Science Tools</span>
-                        <span class="cert-badge">📘 IBM Developer Skills Network – Data Science 101</span>
-                        <span class="cert-badge">📊 Microsoft Power BI (Corporate Academy)</span>
-                    </div>
-                    <div style="margin-top: 12px;">
-                        <i class="fas fa-briefcase"></i> <strong>Major Contributions:</strong>
-                        <ul style="margin-top: 8px; padding-left: 1.2rem;">
-                            <li>Undergraduate Student Experience Survey Report</li>
-                            <li>Postgraduate Student Experience Survey Report</li>
-                            <li>Stop-Out Survey Report</li>
-                            <li>Graduate Employability Assessment (IFC – World Bank Partnership)</li>
-                        </ul>
-                    </div>
-                    <a href="#" class="portfolio-link" style="display: inline-flex; align-items: center; gap:6px; margin-top: 12px;"><i class="fas fa-folder-open"></i> Portfolio of Work: Click Here →</a>
-                </div>
-                <!-- Right Column: Featured Reports / Case Studies (matching blog style) -->
-                <div>
-                    <h3 style="display: flex; align-items: center; gap: 8px; margin-bottom: 1rem;"><i class="fas fa-chart-line" style="color:#3b82f6;"></i> Featured Reports & Case Studies</h3>
-                    <div class="report-item">
-                        <h4>📋 Undergraduate Student Experience Survey Report</h4>
-                        <p style="font-size:0.85rem; color:#475569;">Analysis of student satisfaction, academic engagement, and campus resources — used for strategic planning.</p>
-                        <span class="cert-badge">Institutional Research</span> <span class="cert-badge">Power BI</span>
-                    </div>
-                    <div class="report-item">
-                        <h4>🎓 Postgraduate Student Experience Survey Report</h4>
-                        <p style="font-size:0.85rem; color:#475569;">Key insights on postgraduate research support, supervision quality, and career readiness.</p>
-                        <span class="cert-badge">Survey Analysis</span> <span class="cert-badge">Data Storytelling</span>
-                    </div>
-                    <div class="report-item">
-                        <h4>⏸️ Stop-Out Survey Report</h4>
-                        <p style="font-size:0.85rem; color:#475569;">Identified reasons for student withdrawal and recommended intervention strategies.</p>
-                        <span class="cert-badge">Predictive Insights</span>
-                    </div>
-                    <div class="report-item">
-                        <h4>💼 Graduate Employability Assessment (IFC – World Bank Partnership)</h4>
-                        <p style="font-size:0.85rem; color:#475569;">Collaborated with WSU Institutional Research to track employment, entrepreneurship & leadership outcomes across disciplines → 4th place in Datathon results.</p>
-                        <span class="cert-badge">High-impact</span> <span class="cert-badge">Datathon</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ORIGINAL HEADER (unchanged) -->
+    <!-- Header with Navigation -->
     <header class="blog-header">
         <div class="container">
             <div class="header-content">
@@ -244,7 +75,157 @@
             <section class="blog-posts-section">
                 <h2 class="section-title">Recent <span>Posts</span></h2>
                 <div class="blog-posts-grid" id="blogPostsGrid">
-                    <!-- Post 1 -->
+                    <!-- NEW BLOG POST: Certifications -->
+                    <article class="blog-post" data-category="learning" data-id="cert1">
+                        <div class="post-image">
+                            <div class="post-category">Learning</div>
+                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Certifications">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class='bx bx-calendar'></i> January 10, 2025</span>
+                                <span class="post-read-time"><i class='bx bx-time'></i> 3 min read</span>
+                            </div>
+                            <h3 class="post-title">My Certifications in Data Science & Business Analytics</h3>
+                            <p class="post-text">
+                                A complete list of my professional certifications: Statistics for Data Science & Business Analysis, Advanced Data Analysis & Analytics Reporting with AI, IBM Data Science Tools, IBM Data Science 101, and Microsoft Power BI (Corporate Academy). These have shaped my analytical mindset.
+                            </p>
+                            <div class="post-footer">
+                                <a href="#" class="read-more">Read More <i class='bx bx-right-arrow-alt'></i></a>
+                                <div class="post-tags">
+                                    <span class="tag">Certifications</span>
+                                    <span class="tag">Data Science</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- NEW BLOG POST: Undergraduate Experience Survey Report -->
+                    <article class="blog-post" data-category="projects" data-id="report1">
+                        <div class="post-image">
+                            <div class="post-category">Projects</div>
+                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Survey Report">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class='bx bx-calendar'></i> December 5, 2024</span>
+                                <span class="post-read-time"><i class='bx bx-time'></i> 4 min read</span>
+                            </div>
+                            <h3 class="post-title">Undergraduate Student Experience Survey Report</h3>
+                            <p class="post-text">
+                                Comprehensive analysis of student satisfaction, academic engagement, and campus resources. This report was used for strategic planning and improving retention. Key findings highlight the need for enhanced digital learning tools and mentorship programs.
+                            </p>
+                            <div class="post-footer">
+                                <a href="#" class="read-more">Read More <i class='bx bx-right-arrow-alt'></i></a>
+                                <div class="post-tags">
+                                    <span class="tag">Institutional Research</span>
+                                    <span class="tag">Power BI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- NEW BLOG POST: Postgraduate Experience Survey -->
+                    <article class="blog-post" data-category="experience" data-id="report2">
+                        <div class="post-image">
+                            <div class="post-category">Experience</div>
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Postgraduate Research">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class='bx bx-calendar'></i> November 18, 2024</span>
+                                <span class="post-read-time"><i class='bx bx-time'></i> 5 min read</span>
+                            </div>
+                            <h3 class="post-title">Postgraduate Student Experience Survey Report</h3>
+                            <p class="post-text">
+                                Deep dive into postgraduate research support, supervision quality, and career readiness. Insights from this report led to new workshops for thesis writing and better supervisor matching. A must-read for higher education researchers.
+                            </p>
+                            <div class="post-footer">
+                                <a href="#" class="read-more">Read More <i class='bx bx-right-arrow-alt'></i></a>
+                                <div class="post-tags">
+                                    <span class="tag">Survey Analysis</span>
+                                    <span class="tag">Data Storytelling</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- NEW BLOG POST: Stop-Out Survey Report -->
+                    <article class="blog-post" data-category="projects" data-id="report3">
+                        <div class="post-image">
+                            <div class="post-category">Projects</div>
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Stop Out Analysis">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class='bx bx-calendar'></i> October 22, 2024</span>
+                                <span class="post-read-time"><i class='bx bx-time'></i> 3 min read</span>
+                            </div>
+                            <h3 class="post-title">Stop-Out Survey Report: Understanding Student Withdrawal</h3>
+                            <p class="post-text">
+                                Identified key reasons for student withdrawal and recommended targeted intervention strategies. Financial constraints and lack of academic integration were top factors. This report influenced new scholarship and early alert systems.
+                            </p>
+                            <div class="post-footer">
+                                <a href="#" class="read-more">Read More <i class='bx bx-right-arrow-alt'></i></a>
+                                <div class="post-tags">
+                                    <span class="tag">Predictive Insights</span>
+                                    <span class="tag">Retention</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- NEW BLOG POST: Graduate Employability Assessment (IFC-World Bank) -->
+                    <article class="blog-post" data-category="career" data-id="report4">
+                        <div class="post-image">
+                            <div class="post-category">Career</div>
+                            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1169&q=80" alt="Graduate Employability">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class='bx bx-calendar'></i> September 30, 2024</span>
+                                <span class="post-read-time"><i class='bx bx-time'></i> 6 min read</span>
+                            </div>
+                            <h3 class="post-title">Graduate Employability Assessment (IFC – World Bank Partnership)</h3>
+                            <p class="post-text">
+                                A high-impact collaboration with WSU Institutional Research to track employment, entrepreneurship, and leadership outcomes across disciplines. Our team secured 4th place in the associated Datathon. This report provides actionable insights for career services.
+                            </p>
+                            <div class="post-footer">
+                                <a href="#" class="read-more">Read More <i class='bx bx-right-arrow-alt'></i></a>
+                                <div class="post-tags">
+                                    <span class="tag">Datathon</span>
+                                    <span class="tag">World Bank</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- NEW BLOG POST: Portfolio of Work -->
+                    <article class="blog-post" data-category="projects" data-id="portfolio">
+                        <div class="post-image">
+                            <div class="post-category">Projects</div>
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Portfolio">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class='bx bx-calendar'></i> September 5, 2024</span>
+                                <span class="post-read-time"><i class='bx bx-time'></i> 2 min read</span>
+                            </div>
+                            <h3 class="post-title">Portfolio of Work: Data Analytics & Research Projects</h3>
+                            <p class="post-text">
+                                Explore my complete portfolio of data analysis, visualization, and research projects. From Power BI dashboards to survey reports and hackathon solutions. Click to access the full collection and case studies.
+                            </p>
+                            <div class="post-footer">
+                                <a href="#" class="read-more">Read More <i class='bx bx-right-arrow-alt'></i></a>
+                                <div class="post-tags">
+                                    <span class="tag">Portfolio</span>
+                                    <span class="tag">Showcase</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Original Post 1 -->
                     <article class="blog-post" data-category="experience" data-id="1">
                         <div class="post-image">
                             <div class="post-category">Career</div>
@@ -269,7 +250,7 @@
                         </div>
                     </article>
                     
-                    <!-- Post 2 -->
+                    <!-- Original Post 2 -->
                     <article class="blog-post" data-category="learning" data-id="2">
                         <div class="post-image">
                             <div class="post-category">Learning</div>
@@ -294,7 +275,7 @@
                         </div>
                     </article>
                     
-                    <!-- Post 3 -->
+                    <!-- Original Post 3 -->
                     <article class="blog-post" data-category="projects" data-id="3">
                         <div class="post-image">
                             <div class="post-category">Project</div>
@@ -319,7 +300,7 @@
                         </div>
                     </article>
                     
-                    <!-- Post 4 -->
+                    <!-- Original Post 4 -->
                     <article class="blog-post" data-category="career" data-id="4">
                         <div class="post-image">
                             <div class="post-category">Career</div>
@@ -344,7 +325,7 @@
                         </div>
                     </article>
                     
-                    <!-- Post 5 -->
+                    <!-- Original Post 5 -->
                     <article class="blog-post" data-category="learning" data-id="5">
                         <div class="post-image">
                             <div class="post-category">Learning</div>
@@ -369,7 +350,7 @@
                         </div>
                     </article>
                     
-                    <!-- Post 6 -->
+                    <!-- Original Post 6 -->
                     <article class="blog-post" data-category="experience" data-id="6">
                         <div class="post-image">
                             <div class="post-category">Experience</div>
@@ -465,9 +446,10 @@
         </div>
     </footer>
 
-    <!-- JavaScript (original functionality + small enhancements) -->
+    <!-- JavaScript -->
+    <script src="blog-script.js"></script>
     <script>
-        // Theme toggle (preserve original)
+        // Theme toggle (fallback if external script missing)
         const themeToggle = document.getElementById('themeToggle');
         if (themeToggle) {
             themeToggle.addEventListener('click', () => {
@@ -482,8 +464,7 @@
                 }
             });
         }
-
-        // Search functionality (basic)
+        // Search functionality
         const searchInput = document.getElementById('searchInput');
         const blogPosts = document.querySelectorAll('.blog-post');
         if (searchInput) {
@@ -500,10 +481,8 @@
                 });
             });
         }
-
         // Category filter
         const categoryBtns = document.querySelectorAll('.category-btn');
-        const postsGrid = document.getElementById('blogPostsGrid');
         if (categoryBtns.length) {
             categoryBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
@@ -521,17 +500,14 @@
                 });
             });
         }
-
-        // Load more (dummy)
+        // Load more button
         const loadMoreBtn = document.getElementById('loadMoreBtn');
         if (loadMoreBtn) {
-            let loaded = 6;
             loadMoreBtn.addEventListener('click', () => {
                 alert('All current posts are displayed. New content coming soon!');
             });
         }
-
-        // Newsletter subscription alert
+        // Newsletter subscription
         const newsletterForm = document.getElementById('newsletterForm');
         if (newsletterForm) {
             newsletterForm.addEventListener('submit', (e) => {
@@ -541,8 +517,7 @@
                 else alert('Please enter a valid email.');
             });
         }
-
-        // Dummy read more links (prevent default)
+        // Read more buttons
         document.querySelectorAll('.read-more, .read-more-btn').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
