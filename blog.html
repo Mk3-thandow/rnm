@@ -5,11 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Blog | Personal Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.oxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional inline styles for new CV & Reports showcase */
+        .cv-reports-showcase {
+            background: linear-gradient(135deg, #f8faff 0%, #f0f4fe 100%);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+            border: 1px solid rgba(99, 102, 241, 0.15);
+        }
+        .showcase-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .showcase-header h2 {
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, #1e293b, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 0;
+        }
+        .cv-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            border: 1px solid #e2e8f0;
+        }
+        .cv-card:hover {
+            transform: translateY(-4px);
+        }
+        .cv-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #eef2ff;
+            padding-bottom: 0.75rem;
+        }
+        .cv-header i {
+            font-size: 2rem;
+            color: #3b82f6;
+        }
+        .cert-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        .cert-badge {
+            background: #eef2ff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #1e40af;
+        }
+        .report-item {
+            background: white;
+            border-radius: 16px;
+            padding: 1rem;
+            transition: all 0.2s;
+            border-left: 4px solid #3b82f6;
+            margin-bottom: 1rem;
+        }
+        .report-item h4 {
+            margin: 0 0 0.25rem 0;
+            font-size: 1rem;
+        }
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2rem;
+        }
+        @media (max-width: 768px) {
+            .two-columns { grid-template-columns: 1fr; }
+            .cv-reports-showcase { padding: 1.25rem; }
+        }
+        .btn-cv {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #1e293b;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            margin-top: 1rem;
+        }
+        .btn-cv:hover {
+            background: #0f172a;
+            gap: 0.75rem;
+        }
+        .portfolio-link {
+            color: #3b82f6;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px dashed #3b82f6;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header with Navigation -->
+    <!-- NEW SECTION: CV & REPORTS SHOWCASE (added on top, preserving original structure) -->
+    <div class="container" style="margin-top: 2rem;">
+        <div class="cv-reports-showcase">
+            <div class="showcase-header">
+                <h2><i class="fas fa-file-alt" style="margin-right: 10px; color:#3b82f6;"></i> My Professional Portfolio & Reports</h2>
+                <a href="#" class="btn-cv" target="_blank"><i class="fas fa-download"></i> Download Full CV (PDF)</a>
+            </div>
+            <div class="two-columns">
+                <!-- Left Column: CV + Certifications -->
+                <div class="cv-card">
+                    <div class="cv-header">
+                        <i class="fas fa-user-graduate"></i>
+                        <h3 style="margin:0;">Curriculum Vitae Highlights</h3>
+                    </div>
+                    <p><strong>Data Analyst | Researcher | AI Enthusiast</strong> — Experienced in institutional research, data visualization, and hackathon collaborations.</p>
+                    <div class="cert-list">
+                        <span class="cert-badge">📊 Statistics for Data Science & Business Analysis</span>
+                        <span class="cert-badge">🤖 Advanced Data Analysis & Analytics Reporting with AI</span>
+                        <span class="cert-badge">📘 IBM Developer Skills Network – Data Science Tools</span>
+                        <span class="cert-badge">📘 IBM Developer Skills Network – Data Science 101</span>
+                        <span class="cert-badge">📊 Microsoft Power BI (Corporate Academy)</span>
+                    </div>
+                    <div style="margin-top: 12px;">
+                        <i class="fas fa-briefcase"></i> <strong>Major Contributions:</strong>
+                        <ul style="margin-top: 8px; padding-left: 1.2rem;">
+                            <li>Undergraduate Student Experience Survey Report</li>
+                            <li>Postgraduate Student Experience Survey Report</li>
+                            <li>Stop-Out Survey Report</li>
+                            <li>Graduate Employability Assessment (IFC – World Bank Partnership)</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="portfolio-link" style="display: inline-flex; align-items: center; gap:6px; margin-top: 12px;"><i class="fas fa-folder-open"></i> Portfolio of Work: Click Here →</a>
+                </div>
+                <!-- Right Column: Featured Reports / Case Studies (matching blog style) -->
+                <div>
+                    <h3 style="display: flex; align-items: center; gap: 8px; margin-bottom: 1rem;"><i class="fas fa-chart-line" style="color:#3b82f6;"></i> Featured Reports & Case Studies</h3>
+                    <div class="report-item">
+                        <h4>📋 Undergraduate Student Experience Survey Report</h4>
+                        <p style="font-size:0.85rem; color:#475569;">Analysis of student satisfaction, academic engagement, and campus resources — used for strategic planning.</p>
+                        <span class="cert-badge">Institutional Research</span> <span class="cert-badge">Power BI</span>
+                    </div>
+                    <div class="report-item">
+                        <h4>🎓 Postgraduate Student Experience Survey Report</h4>
+                        <p style="font-size:0.85rem; color:#475569;">Key insights on postgraduate research support, supervision quality, and career readiness.</p>
+                        <span class="cert-badge">Survey Analysis</span> <span class="cert-badge">Data Storytelling</span>
+                    </div>
+                    <div class="report-item">
+                        <h4>⏸️ Stop-Out Survey Report</h4>
+                        <p style="font-size:0.85rem; color:#475569;">Identified reasons for student withdrawal and recommended intervention strategies.</p>
+                        <span class="cert-badge">Predictive Insights</span>
+                    </div>
+                    <div class="report-item">
+                        <h4>💼 Graduate Employability Assessment (IFC – World Bank Partnership)</h4>
+                        <p style="font-size:0.85rem; color:#475569;">Collaborated with WSU Institutional Research to track employment, entrepreneurship & leadership outcomes across disciplines → 4th place in Datathon results.</p>
+                        <span class="cert-badge">High-impact</span> <span class="cert-badge">Datathon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ORIGINAL HEADER (unchanged) -->
     <header class="blog-header">
         <div class="container">
             <div class="header-content">
@@ -296,7 +465,90 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="blog-script.js"></script>
+    <!-- JavaScript (original functionality + small enhancements) -->
+    <script>
+        // Theme toggle (preserve original)
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-theme');
+                const icon = themeToggle.querySelector('i');
+                if (document.body.classList.contains('dark-theme')) {
+                    icon.classList.remove('bx-moon');
+                    icon.classList.add('bx-sun');
+                } else {
+                    icon.classList.remove('bx-sun');
+                    icon.classList.add('bx-moon');
+                }
+            });
+        }
+
+        // Search functionality (basic)
+        const searchInput = document.getElementById('searchInput');
+        const blogPosts = document.querySelectorAll('.blog-post');
+        if (searchInput) {
+            searchInput.addEventListener('input', function(e) {
+                const term = e.target.value.toLowerCase();
+                blogPosts.forEach(post => {
+                    const title = post.querySelector('.post-title')?.innerText.toLowerCase() || '';
+                    const text = post.querySelector('.post-text')?.innerText.toLowerCase() || '';
+                    if (title.includes(term) || text.includes(term)) {
+                        post.style.display = '';
+                    } else {
+                        post.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        // Category filter
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const postsGrid = document.getElementById('blogPostsGrid');
+        if (categoryBtns.length) {
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const category = btn.getAttribute('data-category');
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const allPosts = document.querySelectorAll('.blog-post');
+                    allPosts.forEach(post => {
+                        if (category === 'all' || post.getAttribute('data-category') === category) {
+                            post.style.display = '';
+                        } else {
+                            post.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+
+        // Load more (dummy)
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (loadMoreBtn) {
+            let loaded = 6;
+            loadMoreBtn.addEventListener('click', () => {
+                alert('All current posts are displayed. New content coming soon!');
+            });
+        }
+
+        // Newsletter subscription alert
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = newsletterForm.querySelector('input[type="email"]').value;
+                if (email) alert(`Thanks for subscribing! Updates will be sent to ${email}`);
+                else alert('Please enter a valid email.');
+            });
+        }
+
+        // Dummy read more links (prevent default)
+        document.querySelectorAll('.read-more, .read-more-btn').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Full article preview: stay tuned for detailed case study!');
+            });
+        });
+    </script>
 </body>
 </html>
