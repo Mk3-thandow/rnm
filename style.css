@@ -19,7 +19,6 @@
     --second-color: rgba(87, 6, 52, 0.527);
 }
 
-/* Base font size – 1rem = 10px (easier calculations) */
 html {
     font-size: 62.5%;
     overflow-x: hidden;
@@ -28,16 +27,14 @@ html {
 body {
     background: var(--bg-color);
     color: var(--white-color);
-    overflow-x: hidden;
 }
 
-/* ========== HEADER & NAVIGATION (unchanged structure, only responsive fixes) ========== */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 5%;
+    padding: 2rem 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -74,9 +71,11 @@ body {
     transition: 0.5s;
 }
 
-.navbar a:hover::after,
-.navbar a.active::after {
+.navbar a:hover::after {
     width: 100%;
+}
+.navbar a.active::after{
+  width: 100%;
 }
 
 #lightMoon-icon {
@@ -86,32 +85,39 @@ body {
     cursor: pointer;
 }
 
-#menu-icon {
+#menu-icon{
     font-size: 3.6rem;
     color: var(--text-color);
     cursor: pointer;
     display: none;
 }
 
-/* ========== SECTIONS & HOME ========== */
 section {
     min-height: 100vh;
-    padding: 10rem 5% 2rem;
+    padding: 10rem 9% 2rem;
 }
 
 .home {
     display: flex;
     align-items: center;
-    padding: 0 5%;
+    padding: 0 9%;
     background: url('assets/Picture11.jpg') no-repeat;
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
+}
+
+.home-imghover.home-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--second-color);
+    padding-bottom: 6rem;
 }
 
 .home-content {
     max-width: 60rem;
-    width: 100%;
 }
 
 .home-content h1 {
@@ -122,8 +128,7 @@ section {
 
 .home-content .text-animate {
     position: relative;
-    width: 100%;
-    max-width: 60rem;
+    width: 60rem;
 }
 
 .home-content .text-animate h3 {
@@ -217,11 +222,29 @@ section {
     border-radius: 50%;
     font-size: 30px;
     color: var(--main-color);
-    transition: 0.3s;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5;
 }
 
 .social-icons a:hover {
+    color: var(--main-color);
     transform: translateY(-5px);
+}
+
+.social-icons a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: .5s;
+}
+
+.social-icons a:hover::before {
+    width: 100%;
 }
 
 .home-imghover {
@@ -239,12 +262,11 @@ section {
     opacity: .8;
 }
 
-/* ========== BLOG STYLES (fully responsive) ========== */
+/* Blog Section */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    width: 100%;
 }
 
 .blog-header {
@@ -302,6 +324,7 @@ section {
     font-size: 2.4rem;
     cursor: pointer;
     border: none;
+    transition: color 0.3s;
 }
 
 .theme-toggle:hover {
@@ -349,7 +372,6 @@ section {
     gap: 4rem;
 }
 
-/* Sidebar appears only on large screens */
 @media (min-width: 992px) {
     .blog-main .container {
         grid-template-columns: 1fr 300px;
@@ -515,7 +537,11 @@ section {
     transition: all 0.3s ease;
 }
 
-.category-btn:hover,
+.category-btn:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+
 .category-btn.active {
     background: var(--main-color);
     color: var(--bg-color);
@@ -525,26 +551,11 @@ section {
     grid-column: 1;
 }
 
-/* FIXED GRID: no fixed min-width that causes overflow */
 .blog-posts-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 3rem;
     margin-bottom: 4rem;
-}
-
-/* From tablet upwards, show two columns */
-@media (min-width: 576px) {
-    .blog-posts-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* From desktop, three columns (optional, but keeps layout clean) */
-@media (min-width: 992px) {
-    .blog-posts-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
 }
 
 .blog-post {
@@ -620,8 +631,6 @@ section {
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
-    flex-wrap: wrap;
-    gap: 1rem;
 }
 
 .read-more {
@@ -641,7 +650,6 @@ section {
 .post-tags {
     display: flex;
     gap: 0.5rem;
-    flex-wrap: wrap;
 }
 
 .tag {
@@ -849,142 +857,639 @@ section {
     opacity: 0.7;
 }
 
-/* ========== MOBILE RESPONSIVE OVERRIDES (fix all small screens) ========== */
+/* Responsive Styles (your original) */
 @media (max-width: 768px) {
-    .header {
-        padding: 1.5rem 4%;
-    }
-
-    #menu-icon {
-        display: block;
-    }
-
-    .navbar {
-        position: fixed;
-        top: 100%;
-        left: -100%;
-        width: 100%;
-        background: var(--second-color);
-        padding: 3rem 4%;
-        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
-        transition: .3s ease;
-        z-index: 1000;
-        backdrop-filter: blur(10px);
-    }
-
-    .navbar.active {
-        left: 0;
-    }
-
-    .navbar a {
-        display: block;
-        font-size: 2rem;
-        margin: 2rem 0;
-        text-align: center;
-    }
-
-    .home {
-        padding: 12rem 4% 4rem;
-        text-align: center;
-    }
-
-    .home-content h1 {
-        font-size: 3.8rem;
-    }
-
-    .home-content .text-animate h3 {
-        font-size: 2.4rem;
-    }
-
-    .btn-box {
-        width: 100%;
-        justify-content: center;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        height: auto;
-    }
-
-    .btn-box .btn {
-        width: 45%;
-        min-width: 140px;
-    }
-
-    .social-icons {
-        position: relative;
-        bottom: auto;
-        margin: 3rem auto 0;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .home-imghover {
-        display: none;
-    }
-
-    .featured-post {
-        grid-template-columns: 1fr;
-    }
-
-    .featured-content .post-title {
-        font-size: 2.2rem;
-    }
-
     .header-content {
         flex-direction: column;
         text-align: center;
     }
-
+    
+    .header-title h1 {
+        font-size: 2.8rem;
+    }
+    
+    .section-title {
+        font-size: 2.8rem;
+    }
+    
+    .featured-content .post-title {
+        font-size: 2.2rem;
+    }
+    
+    .blog-posts-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .search-box input {
         width: 180px;
     }
-
+    
     .search-box input:focus {
         width: 200px;
     }
 }
 
 @media (max-width: 480px) {
-    html {
-        font-size: 55%; /* slightly smaller base for very small screens */
-    }
-
-    .home-content h1 {
-        font-size: 3rem;
-    }
-
-    .home-content .text-animate h3 {
-        font-size: 2rem;
-    }
-
-    .btn-box .btn {
-        width: 100%;
-        max-width: 220px;
-    }
-
     .featured-content .post-meta {
         flex-direction: column;
         gap: 0.8rem;
     }
-
+    
     .post-footer {
         flex-direction: column;
+        gap: 1.5rem;
         align-items: flex-start;
     }
-
-    .blog-posts-grid {
-        gap: 2rem;
+    
+    .post-tags {
+        flex-wrap: wrap;
     }
 }
 
-/* ========== ADDITIONAL FIXES FOR TOUCH & IOS ========== */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--second-color);
+    padding-bottom: 6rem;
+}
+
+.heading {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.about-img {
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img img {
+    width: 76%;
+    height: 76%;
+    border-radius: 50%;
+    border: .2rem solid var(--main-color);
+    object-fit: cover;
+}
+
+.about-img .inner-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    border-top: .2rem solid var(--bg-color);
+    border-bottom: .2rem solid var(--bg-color);
+    border-left: .2rem solid var(--main-color);
+    border-right: .2rem solid var(--main-color);
+}
+
+.about-img .circle-spin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-top: .2rem solid var(--main-color);
+    border-bottom: .2rem solid var(--main-color);
+    border-left: .2rem solid var(--bg-color);
+    border-right: .2rem solid var(--bg-color);
+}
+
+.about-img .outer-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 110%;
+    height: 110%;
+    border-radius: 50%;
+    border-top: .2rem solid var(--bg-color);
+    border-bottom: .2rem solid var(--bg-color);
+    border-left: .2rem solid var(--main-color);
+    border-right: .2rem solid var(--main-color);
+}
+
+.about-content {
+    text-align: center;
+}
+
+.about-content h3 {
+    font-size: 2.6rem;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+.btn-box.btns {
+    display: inline-block;
+    width: 15rem;
+}
+
+.btn-box.btns a::before {
+    background: var(--bg-color);
+}
+
+.education {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 5rem;
+}
+
+.education .education-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.education-row .education-column {
+    flex: 1 1 40rem;
+}
+
+.education-column .title {
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 2rem;
+}
+
+.education-column .education-box {
+    border-left: .2rem solid var(--main-color);
+}
+
+.education-box .education-content {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.education-box .education-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1.1rem;
+    width: 2rem;
+    height: 2rem;
+    background: var(--main-color);
+    border-radius: 50%;
+}
+
+.education-content .content {
+    position: relative;
+    padding: 1.5rem;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    margin-bottom: 2rem;
+}
+
+.education-content .content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.education-content .content:hover::before {
+    width: 100%;
+}
+
+.education-box .content .year {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.education-content .content .year i {
+    padding-right: .5rem;
+}
+
+.education-content .content h3 {
+    font-size: 2rem;
+}
+
+.education-content .content p {
+    font-size: 1.6rem;
+    padding-top: .5rem;
+}
+
+.skills {
+    min-height: auto;
+    padding-bottom: 7rem;
+    background: var(--second-color);
+}
+
+.skills .skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.skills-row .skills-column {
+    flex: 1 1 40rem;
+}
+
+.skills-column .title {
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem;
+}
+
+.skills-box .skills-content {
+    position: relative;
+    border: .2rem solid var(--main-color);
+    padding: .5rem 1.5rem;
+}
+
+.skills-content .progress {
+    padding: 1rem 0;
+}
+
+.skills-content .progress h3 {
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills-content .progress h3 span {
+    color: var(--text-color);
+}
+
+.skills-content .progress .bar {
+    height: 2.5rem;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+    padding: .5rem;
+    margin: 1rem 0;
+}
+
+.skills-content .progress .bar span {
+    display: block;
+    height: 100%;
+    border-radius: .3rem;
+    background: var(--main-color);
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span {
+    width: 90%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span {
+    width: 60%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span {
+    width: 80%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span {
+    width: 50%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span {
+    width: 75%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span {
+    width: 90%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span {
+    width: 50%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span {
+    width: 95%;
+}
+
+.contact {
+    min-height: auto;
+    padding-bottom: 7rem;
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact form .input-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box .input-field {
+    position: relative;
+    width: 49%;
+    margin: .8rem 0;
+}
+
+.contact form .input-box .input-field input,
+.contact form .textarea-field textarea {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+}
+
+.contact form .input-box .input-field input::placeholder,
+.contact form .textarea-field textarea::placeholder {
+    color: var(--text-color);
+}
+
+.contact form .focus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--second-color);
+    border-radius: .6rem;
+    z-index: -1;
+    transition: .5s;
+}
+
+.contact form .textarea-field {
+    position: relative;
+    margin: .8rem 0 2.7rem;
+    display: flex;
+}
+
+.contact form .textarea-field textarea {
+    resize: none;
+}
+
+.contact form .btn-box .btn {
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: rgba(71, 16, 48, 0.571);
+}
+
+/* ===========================================
+   MOBILE-FIRST RESPONSIVE BREAKPOINTS (your original)
+   =========================================== */
+
+/* Base mobile styles (default for all screens) */
+html {
+    font-size: 50%; /* Start with smallest base for mobile */
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+    .header {
+        padding: 2rem 5%;
+    }
+    section {
+        padding: 10rem 5% 2rem;
+    }
+    .home {
+        padding: 0 5%;
+    }
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 50%;
+    }
+    .header {
+        padding: 2rem 4%;
+    }
+    section {
+        padding: 10rem 4% 2rem;
+    }
+    .home {
+        padding: 0 4%;
+    }
+    .home-content h1 {
+        font-size: 4.8rem;
+    }
+    .text-animate h3 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 2rem 3%;
+        background: rgba(0, 0, 0, 0.9);
+    }
+    #menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+    .navbar {
+        position: fixed;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 100%);
+        background: var(--second-color);
+        padding: 3rem 4%;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        transition: .3s ease;
+        z-index: 1000;
+    }
+    .navbar.active {
+        left: 0;
+    }
+    .navbar a {
+        display: block;
+        font-size: 2.2rem;
+        margin: 2.5rem 0;
+        text-align: center;
+    }
+    .home-content h1 {
+        font-size: 4.2rem;
+        line-height: 1.2;
+    }
+    .text-animate h3 {
+        font-size: 2.4rem;
+    }
+    .home-content p {
+        font-size: 1.5rem;
+    }
+    .btn-box {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+    .btn-box .btn {
+        width: 48%;
+        min-width: 140px;
+    }
+    .social-icons {
+        position: relative;
+        bottom: auto;
+        margin-top: 4rem;
+        left: 0;
+        width: 100%;
+        justify-content: center;
+    }
+    .home-imghover {
+        display: none;
+    }
+    .blog-posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .featured-post {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        padding: 1.5rem 3%;
+    }
+    .home {
+        padding: 12rem 3% 2rem;
+        text-align: center;
+    }
+    .home-content h1 {
+        font-size: 3.8rem;
+    }
+    .text-animate {
+        width: 100%;
+    }
+    .text-animate h3 {
+        font-size: 2.2rem;
+    }
+    .btn-box {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 1.5rem;
+    }
+    .btn-box .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+    .social-icons {
+        width: 100%;
+        max-width: 280px;
+        margin: 3rem auto 0;
+    }
+    .social-icons a {
+        width: 45px;
+        height: 45px;
+        font-size: 2rem;
+    }
+    .blog-posts-grid {
+        grid-template-columns: 1fr;
+    }
+    .featured-content .post-title {
+        font-size: 2.2rem;
+    }
+    .post-content .post-title {
+        font-size: 1.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-content h1 {
+        font-size: 3.4rem;
+    }
+    .text-animate h3 {
+        font-size: 2rem;
+    }
+    .home-content p {
+        font-size: 1.4rem;
+        line-height: 1.7;
+    }
+    .btn-box .btn {
+        height: 4.5rem;
+        font-size: 1.6rem;
+    }
+    .social-icons a {
+        width: 42px;
+        height: 42px;
+        font-size: 1.9rem;
+    }
+    .footer {
+        padding: 1.5rem 3%;
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    .footer p {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .home-content h1 {
+        font-size: 3rem;
+    }
+    .text-animate h3 {
+        font-size: 1.8rem;
+    }
+    .btn-box .btn {
+        height: 4rem;
+        font-size: 1.5rem;
+    }
+    .social-icons {
+        max-width: 250px;
+    }
+    .social-icons a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.8rem;
+    }
+}
+
 @media (hover: none) and (pointer: coarse) {
+    .navbar a,
+    .btn-box .btn,
+    .social-icons a {
+        min-height: 44px;
+        min-width: 44px;
+    }
     .blog-post:hover,
     .featured-post:hover {
         transform: none;
     }
-
     .btn-box .btn:active::before {
         width: 100%;
+    }
+    .social-icons a:active {
+        background: var(--main-color);
+        color: var(--bg-color);
     }
 }
 
@@ -994,6 +1499,45 @@ section {
     }
 }
 
+/* ===== ADDITIONAL FIXES FOR MENU & RESPONSIVENESS (added at the end) ===== */
+
+/* Ensure navbar is above content when open */
+.navbar.active {
+    z-index: 2000;
+}
+
+/* Prevent body scroll when menu is open on mobile (optional) */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Fix text-animate width on small screens */
+@media (max-width: 768px) {
+    .home-content .text-animate {
+        width: 100%;
+    }
+    /* Fix blog grid overflow */
+    .blog-posts-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .blog-posts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+    }
+}
+
+/* Ensure container doesn't cause horizontal scroll */
+.container {
+    overflow-x: hidden;
+}
+
+/* Make all images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 
 
