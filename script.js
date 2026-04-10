@@ -1,25 +1,25 @@
-// toggle icon navbar
-    let menuIcon = document.querySelector('#menu-icon');
-    let navbar = document.querySelector('.navbar');
+// Mobile menu toggle
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
 
+if (menuIcon) {
     menuIcon.onclick = () => {
         menuIcon.classList.toggle('bx-x');
         navbar.classList.toggle('active');
     }
+}
 
+// Close menu when a nav link is clicked (good for single-page anchors)
+document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (navbar.classList.contains('active')) {
+            menuIcon.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        }
+    });
+});
 
-// function loadpage(page){
-//     fetch(page)
-//     .then(response => response.text())
-//     .then(data => {
-//         document.getElementById("content").innerHTML = data;
-//     })
-//     .catch(error => {
-//         document.getElementById("Content").innerHTML = "<p> Error loading page.<p>";
-//     });
-
-
-// scroll section 
+// Scroll spy for active section highlighting
 let sections = document.querySelectorAll('section');
 let navlinks = document.querySelectorAll('header nav a');
 
@@ -30,21 +30,16 @@ window.onscroll = () => {
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
 
-        if(top >= offset && top < offset + height) {
-            // active navbar links
+        if (top >= offset && top < offset + height) {
             navlinks.forEach(links => {
                 links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id +']').classList.add('active');
+                let activeLink = document.querySelector(`header nav a[href*="${id}"]`);
+                if (activeLink) activeLink.classList.add('active');
             });
         }
     });
 
-    // remove toogle icon and navbar when click navbar links (scroll)
-    menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active');
-
-    // sticky header
-    // let header = document.querySelector('header');
-
-    // header.classList.toggle('sticky', window.scrollY > 100);
+    // ❌ REMOVED the lines that closed the menu on scroll
+    // menuIcon.classList.remove('bx-x');
+    // navbar.classList.remove('active');
 }
